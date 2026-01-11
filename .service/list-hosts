@@ -283,3 +283,8 @@
 138.124.72.139 labs.google
 138.124.72.139 notebooklm.google
 138.124.72.139 notebooklm.google.com
+
+# Claude
+185.87.51.182 claude.ai
+185.87.51.182 console.anthropic.com
+185.87.51.182 api.anthropic.com
