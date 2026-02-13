@@ -200,6 +200,44 @@
 104.25.158.178 finland10198.discord.media
 104.25.158.178 finland10199.discord.media
 
+# Telegram Web
+149.154.167.220 telegram.me
+149.154.167.220 telegram.dog
+149.154.167.220 telegram.space
+149.154.167.220 telesco.pe
+149.154.167.220 tg.dev
+149.154.167.220 kws2.web.telegram.org
+149.154.167.220 kws2-1.web.telegram.org
+149.154.167.220 kws1-1.web.telegram.org
+149.154.167.220 kws1.web.telegram.org
+149.154.167.220 telegram.org
+149.154.167.220 t.me
+149.154.167.220 telegram.me
+149.154.167.220 tg.dev
+149.154.167.220 telesco.pe
+149.154.167.220 api.telegram.org
+149.154.167.220 pluto.web.telegram.org
+149.154.167.220 pluto-1.web.telegram.org
+149.154.167.220 flora.web.telegram.org
+149.154.167.220 td.telegram.org
+149.154.167.220 venus.web.telegram.org
+149.154.167.220 web.telegram.org
+149.154.167.220 kws1-1.web.telegram.org
+149.154.167.220 kws1.web.telegram.org
+149.154.167.220 kws2-1.web.telegram.org
+149.154.167.220 kws2.web.telegram.org
+149.154.167.220 kws4-1.web.telegram.org
+149.154.167.220 kws4.web.telegram.org
+149.154.167.220 kws5-1.web.telegram.org
+149.154.167.220 kws5.web.telegram.org
+149.154.167.220 zws1-1.web.telegram.org
+149.154.167.220 zws1.web.telegram.org
+149.154.167.220 zws2-1.web.telegram.org
+149.154.167.220 zws2.web.telegram.org
+149.154.167.220 zws4-1.web.telegram.org
+149.154.167.220 zws5-1.web.telegram.org
+149.154.167.220 zws5.web.telegram.org
+
 # OpenAI
 185.87.51.182 chatgpt.com
 185.87.51.182 ab.chatgpt.com
@@ -288,3 +326,24 @@
 185.87.51.182 claude.ai
 185.87.51.182 console.anthropic.com
 185.87.51.182 api.anthropic.com
+
+# Supercell
+144.31.14.104 cdn.id.supercell.com
+144.31.14.104 security.id.supercell.com
+144.31.14.104 accounts.supercell.com
+185.87.51.182 game-assets.clashroyaleapp.com
+185.87.51.182 game-assets.clashofclans.com
+144.31.14.104 clashofclans.inbox.supercell.com
+144.31.14.104 game-assets.brawlstarsgame.com
+144.31.14.104 store.supercell.com
+
+# Other
+31.13.72.172 www.instagram.com
+144.31.14.104 www.tiktok.com
+185.87.51.182 web.archive.org
+185.87.51.182 developer.nvidia.com
+185.87.51.182 accounts.autodesk.com
+185.87.51.182 www.autodesk.com
+185.87.51.182 www.intel.com
+185.87.51.182 usher.ttvnw.net
+185.87.51.182 gql.twitch.tv
