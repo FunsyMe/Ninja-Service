@@ -1,13 +1,13 @@
-﻿$host.UI.RawUI.WindowTitle = "Обновление приложения Ninja Service"
+﻿$host.UI.RawUI.WindowTitle = "Обновление приложения Orbitus Service"
 
 # Dir Variables
 $rootDir = Split-Path $PSScriptRoot -Parent
-$ninjaService = Join-Path $rootDir "ninja_service.bat"
-$versionFile = Join-Path $rootDir "bin\ninja_version.txt"
+$orbitusService = Join-Path $rootDir "orbitus_service.bat"
+$versionFile = Join-Path $rootDir "bin\orbitus_version.txt"
 
 # Archive Variables
-$zipDir = "$env:TEMP\Ninja.Service.zip"
-$extractDir = "$env:TEMP\Ninja.Service"
+$zipDir = "$env:TEMP\Orbitus.Service.zip"
+$extractDir = "$env:TEMP\Orbitus.Service"
 
 # Check Admin
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
@@ -17,15 +17,15 @@ if (-not $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Adm
     Write-Host "Нажмите любую клавишу для выхода..."
     [void][System.Console]::ReadKey($true)
 
-    Start-Process $ninjaService
+    Start-Process $orbitusService
     exit
 }
 
 # Get Release
-Write-Host "[ИНФО] Идет поиск обновлений Ninja Service" -ForegroundColor Cyan
+Write-Host "[ИНФО] Идет поиск обновлений Orbitus Service" -ForegroundColor Cyan
 
 $release = Invoke-WebRequest `
-    -Uri "https://raw.githubusercontent.com/FunsyMe/Ninja-Service/main/.service/ninja_version.txt" `
+    -Uri "https://raw.githubusercontent.com/FunsyMe/Orbitus-Service/main/.service/orbitus_version.txt" `
     -Headers @{ "Cache-Control"="no-cache" } `
     -UseBasicParsing -TimeoutSec 5
 $newVersion = $release.Content.Trim()
@@ -39,19 +39,19 @@ if ($newVersion -eq $currentVersion) {
     Write-Host "Нажмите любую клавишу для выхода..."
     [void][System.Console]::ReadKey($true)
     
-    Start-Process $ninjaService
+    Start-Process $orbitusService
     exit
 }
-Write-Host "[ИНФО] Найдено новое обновление Ninja Serivce v$newVersion" -ForegroundColor Cyan
+Write-Host "[ИНФО] Найдено новое обновление Orbitus Serivce v$newVersion" -ForegroundColor Cyan
 
 # User Input
 do {
-    Write-Host "[ВВОД] Вы желаете обновить Ninja Service (Y/N): " -ForegroundColor Cyan -NoNewline
+    Write-Host "[ВВОД] Вы желаете обновить Orbitus Service (Y/N): " -ForegroundColor Cyan -NoNewline
     $continue = Read-Host
 } until ($continue -match '^[YyNn]$')
 
 if ($continue -match '^[Nn]$') {
-    Start-Process $ninjaService
+    Start-Process $orbitusService
     exit
 }
 Clear-Host
@@ -94,15 +94,15 @@ try {
 
 # Download Archive
 try {
-    Invoke-WebRequest -Uri "https://github.com/FunsyMe/Ninja-Service/releases/latest/download/Ninja.Service.zip" -OutFile $zipDir
-    Write-Host "[ОК] Ninja Service успешно скачался" -ForegroundColor Green
+    Invoke-WebRequest -Uri "https://github.com/FunsyMe/Orbitus-Service/releases/latest/download/Orbitus.Service.zip" -OutFile $zipDir
+    Write-Host "[ОК] Orbitus Service успешно скачался" -ForegroundColor Green
 }
 catch {
-    Write-Host "[ОШИБКА] Не удалось скачать Ninja Service" -ForegroundColor Red
+    Write-Host "[ОШИБКА] Не удалось скачать Orbitus Service" -ForegroundColor Red
     Write-Host "Нажмите любую клавишу для выхода..."
     [void][System.Console]::ReadKey($true)
     
-    Start-Process $ninjaService -NoNewWindow
+    Start-Process $orbitusService -NoNewWindow
     exit
 }
 
@@ -127,9 +127,9 @@ if (Test-Path $rootDir) {
 Copy-Item -Path "$extractDir\*" -Destination $rootDir -Recurse -Force | Out-Null
 Write-Host
 
-Write-Host "[ОК] Ninja Service успешно обновлен" -ForegroundColor Green
+Write-Host "[ОК] Orbitus Service успешно обновлен" -ForegroundColor Green
 Write-Host "Нажмите любую клавишу для выхода..."
 
 [void][System.Console]::ReadKey($true)
-Start-Process $ninjaService
+Start-Process $orbitusService
 exit

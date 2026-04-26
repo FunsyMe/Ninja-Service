@@ -17,7 +17,7 @@ $hostsFile = Join-Path $hostsDir "hosts"
 $backupFile = Join-Path $hostsDir "hosts.backup"
 
 # Download File
-$hostsUrl = "https://raw.githubusercontent.com/FunsyMe/Ninja-Service/main/.service/list-hosts"
+$hostsUrl = "https://raw.githubusercontent.com/FunsyMe/Orbitus-Service/main/.service/list-hosts.txt"
 $hostText = Invoke-WebRequest -Uri $hostsUrl -UseBasicParsing | Select-Object -ExpandProperty Content
 
 # Remove File

@@ -16,7 +16,7 @@ $rootDir = Split-Path $PSScriptRoot -Parent
 
 # Download File
 $hostsFile = "$rootDir\lists\ipset-all.txt"
-$hostsUrl = "https://raw.githubusercontent.com/FunsyMe/Ninja-Service/main/.service/list-ipset"
+$hostsUrl = "https://raw.githubusercontent.com/FunsyMe/Orbitus-Service/main/.service/list-ipset.txt"
 $hostText = Invoke-WebRequest -Uri $hostsUrl -UseBasicParsing | Select-Object -ExpandProperty Content
 
 # Write File
