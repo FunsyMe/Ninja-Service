@@ -7,7 +7,7 @@
 > Данная утилита является фороком к [flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube/)
 > Вы можете поддержать автора проекта: https://nowpayments.io/donation/flowseal
 
-> [!WARNING]
+> [!CAUTION]
 > WinDivert может вызвать реакцию антивируса.
 > WinDivert - это инструмент для перехвата и фильтрации трафика, необходимый для работы zapret.
 > Замена iptables и NFQUEUE в Linux, которых нет под Windows.
