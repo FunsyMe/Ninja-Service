@@ -1,3 +1,8 @@
+<div align="center">
+
+# <img src="https://cdn-icons-png.flaticon.com/128/5968/5968756.png" height=28 /> <a href="https://github.com/FunsyMe/">FunsyMe</a><a href="https://github.com/FunsyMe/Orbitus-Service">/Orbitus-Service</a> <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" height=28 />
+</div>
+
 > [!TIP]
 > Данная утилита является фороком к [flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube/)
 > Вы можете поддержать автора проекта: https://nowpayments.io/donation/flowseal
