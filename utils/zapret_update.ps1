@@ -1,4 +1,4 @@
-﻿$host.UI.RawUI.WindowTitle = "Обновление приложения Orbitus Service"
+﻿$host.UI.RawUI.WindowTitle = "Обновление утилиты Orbitus Service"
 
 # Dir Variables
 $rootDir = Split-Path $PSScriptRoot -Parent
@@ -24,11 +24,23 @@ if (-not $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Adm
 # Get Release
 Write-Host "[ИНФО] Идет поиск обновлений Orbitus Service" -ForegroundColor Cyan
 
-$release = Invoke-WebRequest `
-    -Uri "https://raw.githubusercontent.com/FunsyMe/Orbitus-Service/main/.service/orbitus_version.txt" `
-    -Headers @{ "Cache-Control"="no-cache" } `
-    -UseBasicParsing -TimeoutSec 5
-$newVersion = $release.Content.Trim()
+try {
+    $release = Invoke-WebRequest `
+        -Uri "https://raw.githubusercontent.com/FunsyMe/Orbitus-Service/main/.service/orbitus_version.txt" `
+        -Headers @{ "Cache-Control"="no-cache" } `
+        -UseBasicParsing -TimeoutSec 5 -ErrorAction Stop
+        
+    $newVersion = $release.Content.Trim()
+}
+catch {
+    Write-Host
+    Write-Host "[ОШИБКА] Не удалось получить последную версию утилиты" -ForegroundColor Red
+    Write-Host "Нажмите любую клавишу для выхода..."
+    [void][System.Console]::ReadKey($true)
+    
+    Start-Process $orbitusService
+    exit
+}
 
 # Compare Verison
 $currentVersion = Get-Content $versionFile | Select-Object -First 1
