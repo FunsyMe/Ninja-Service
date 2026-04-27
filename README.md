@@ -4,7 +4,7 @@
 </div>
 
 > [!TIP]
-> Данная утилита является фороком к [flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube/)
+> Данная утилита является фороком к [flowseal/zapret-discord-youtube](https://github.com/Flowseal/zapret-discord-youtube/).
 > Вы можете поддержать автора проекта: https://nowpayments.io/donation/flowseal
 
 > [!CAUTION]
