@@ -18,7 +18,17 @@ $backupFile = Join-Path $hostsDir "hosts.backup"
 
 # Download File
 $hostsUrl = "https://raw.githubusercontent.com/FunsyMe/Orbitus-Service/main/.service/list-hosts.txt"
-$hostText = Invoke-WebRequest -Uri $hostsUrl -UseBasicParsing | Select-Object -ExpandProperty Content
+
+try {
+    $hostsText = Invoke-WebRequest -Uri $hostsUrl -ErrorAction Stop -UseBasicParsing | Select-Object -ExpandProperty Content
+}
+catch {
+    Write-Host "[ОШИБКА] Не удалось скачать файл hosts" -ForegroundColor Red
+    Write-Host "Нажмите любую клавишу для выхода..."
+
+    [void][System.Console]::ReadKey($true)
+    exit
+}
 
 # Remove File
 if (!(Test-Path $backupFile)) {
@@ -32,7 +42,7 @@ if (!(Test-Path $backupFile)) {
 try {
     New-Item $hostsFile > $null
     Clear-Content -Path $hostsFile -ErrorAction SilentlyContinue
-    Add-Content -Path $hostsFile -Value $hostText -ErrorAction SilentlyContinue
+    Add-Content -Path $hostsFile -Value $hostsText -ErrorAction SilentlyContinue
 }
 catch {
     Write-Host "[ОШИБКА] Файл host не может быть изменен" -ForegroundColor Red
