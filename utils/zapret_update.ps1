@@ -106,7 +106,7 @@ try {
 
 # Download Archive
 try {
-    Invoke-WebRequest -Uri "https://github.com/FunsyMe/Orbitus-Service/releases/latest/download/Orbitus.Service.zip" -ErrorAction Stop -OutFile $zipDir
+    Invoke-WebRequest -Uri "https://github.com/FunsyMe/Orbitus-Service/releases/latest/download/orbitus-service-$newVersion.zip" -ErrorAction Stop -OutFile $zipDir
     Write-Host "[ОК] Orbitus Service успешно скачался" -ForegroundColor Green
 }
 catch {
